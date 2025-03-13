@@ -49,3 +49,16 @@ def guardarProveedor(datosProveedor:ProveedorDTO,database:Session=Depends(conect
     except Exception as error:
         database.rollback()
         raise HTTPException(status_code=400, detail=f"tenemos un error {error}")
+    
+
+
+
+    #Rutina para consultar los proveedores
+@rutas.get("/proveedor", response_model=List[ProveedorDTOEnvio], summary="Servicio para consultar todos los")   
+def buscarProveedores(database:Session=Depends(conectarConBd)):
+    try:
+        proveedores=database.query(Proveedor).all()
+        return proveedores
+    except Exception as error:
+        database.rollback()
+        raise HTTPException(status_code=404, detail=f"tenemos un error {error}")
