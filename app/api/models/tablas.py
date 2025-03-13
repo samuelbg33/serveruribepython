@@ -13,7 +13,7 @@ class Proveedor(Base):
     direccion=Column(String(100))
     ciudad=Column(String(20))
     representante=Column(String(50))
-    telefonoCOntacto=Column(String(20))
+    telefonoContacto=Column(String(20))
     correo=Column(String(50))
     fechaEnvio=Column(Date)
     costoEnvio=Column(Integer)

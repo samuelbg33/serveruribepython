@@ -8,7 +8,7 @@ class ProveedorDTO(BaseModel): #EL DTO DE RECEPCION
     direccion:str
     ciudad:str
     representante:str
-    telefonoCOntacto:str
+    telefonoContacto:str
     correo:str
     fechaEnvio:date
     costoEnvio:int
